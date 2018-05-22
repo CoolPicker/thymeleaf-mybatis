@@ -23,5 +23,11 @@
         <include refid="Base_Column_List"/>
         FROM t_user
     </select>
+    <!--获取单个元素-->
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_user WHERE user_id=#{userId}
+    </select>
 
 </mapper>
