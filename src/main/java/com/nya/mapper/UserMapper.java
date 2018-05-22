@@ -14,4 +14,5 @@ public interface UserMapper {
 
     List<User> selectAllUser();
 
+    User selectById(Integer userId);
 }

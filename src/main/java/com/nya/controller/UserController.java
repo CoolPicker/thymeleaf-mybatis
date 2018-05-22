@@ -3,6 +3,7 @@ package com.nya.controller;
 import com.nya.entity.User;
 import com.nya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,13 @@ import java.util.List;
 @Controller
 public class UserController {
 
+    @Qualifier("userServiceImpl")
     @Autowired
     private UserService userService;
+
+    @Qualifier("userServiceTestImpl")
+    @Autowired
+    private UserService userServiceTest;
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
@@ -31,6 +37,12 @@ public class UserController {
     @ResponseBody
     public List<User> getAllUser(@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize){
         return userService.getAllUser(pageNum,pageSize);
+    }
+
+    @RequestMapping(value = "one/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public User getUserById(@PathVariable("id")Integer userId){
+        return userServiceTest.getUserById(userId);
     }
 
 }

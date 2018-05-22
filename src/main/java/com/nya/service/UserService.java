@@ -13,4 +13,6 @@ public interface UserService {
 
     List<User> getAllUser(int pageNum,int pageSize);
 
+    User getUserById(Integer userId);
+
 }
