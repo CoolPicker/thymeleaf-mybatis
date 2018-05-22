@@ -38,3 +38,7 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+#测试
+test:
+  scope: 0.9f
+
