@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @Date: 18-5-22 下午4:00
  */
 @ConfigurationProperties(prefix = "example")
-@PropertySource(value = "classpath:config/config-test.properties")
+@PropertySource(value = "file:${config.location}")
 @Component
 public class ExampleConfig {
     private String name;

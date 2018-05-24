@@ -41,4 +41,6 @@ pagehelper:
 #测试
 test:
   scope: 0.9f
+config:
+  location: /home/han/niuya/textclf-config.properties
 

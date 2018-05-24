@@ -14,8 +14,8 @@
 
     <!--插入-->
     <insert id="insert" parameterType="com.nya.entity.User">
-        INSERT INTO t_user (user_id,user_name,password,phone)
-        VALUES (#{userId},#{userName},#{password},#{phone})
+        INSERT INTO t_user (user_name,password,phone)
+        VALUES (#{userName},#{password},#{phone})
     </insert>
     <!--获取列表-->
     <select id="selectAllUser" resultMap="BaseResultMap">
